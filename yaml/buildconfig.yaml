@@ -2,8 +2,8 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    app: nginx-lb
-  name: nginx-lb
+    app: hello-world
+  name: hello-world
 spec:
     runPolicy: "Serial"
     triggers:
@@ -18,7 +18,7 @@ spec:
         automatic: true
     source:
       git:
-        uri: https://github.com/vohanks354/nginx-LB.git
+        uri: https://github.com/vohanks354/hello-world.git
     strategy:
       type: Docker
       dockerStrategy:
@@ -28,4 +28,4 @@ spec:
         - name: credquay
       to:
         kind: "ImageStreamTag"
-        name: "nginx-lb:latest"
+        name: "hello-world:latest"

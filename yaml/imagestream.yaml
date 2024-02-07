@@ -1,9 +1,9 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: nginx-lb
+  name: hello-world
   labels:
-    app: nginx-lb
+    app: hello-world
 spec:
   lookupPolicy:
     local: false

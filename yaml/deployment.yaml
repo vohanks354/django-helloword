@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-lb
+  name: hello-world
   labels:
-    app: nginx-lb
+    app: hello-world
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-lb
+      app: hello-world
   template:
     metadata:
       labels:
-        app: nginx-lb
+        app: hello-world
     spec:
       containers:
-        - name: nginx-lb
-          image: "default-route-openshift-image-registry.apps.sandbox-m2.ll9k.p1.openshiftapps.com/kirom-hadiyanto-dev/nginx-lb:latest"
-          # image: "nginx-lb:latest"
+        - name: hello-world
+          image: "default-route-openshift-image-registry.apps.sandbox-m2.ll9k.p1.openshiftapps.com/kirom-hadiyanto-dev/hello-world:latest"
+          # image: "hello-world:latest"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           tty: true
