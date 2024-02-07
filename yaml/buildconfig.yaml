@@ -18,7 +18,7 @@ spec:
         automatic: true
     source:
       git:
-        uri: https://github.com/vohanks354/hello-world.git
+        uri: https://github.com/vohanks354/django-helloword.git
     strategy:
       type: Docker
       dockerStrategy:
