@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "oc create -f buildconfig.yaml"
+                        sh "oc create -f yaml/buildconfig.yaml"
                     } catch (Exception e) {
                         sh "echo ${e}"
                     }
@@ -58,7 +58,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "oc create -f imagestream.yaml"
+                        sh "oc create -f yaml/imagestream.yaml"
                     } catch (Exception e) {
                         sh "echo ${e}"
                     }
@@ -80,7 +80,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "oc create -f deployment.yaml"
+                        sh "oc create -f yaml/deployment.yaml"
                     } catch (Exception e) {
                         sh "echo ${e}"
                     }
@@ -91,7 +91,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "oc create -f service.yaml"
+                        sh "oc create -f yaml/service.yaml"
                     } catch (Exception e) {
                         sh "echo ${e}"
                     }
@@ -102,7 +102,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "oc create -f route.yaml"
+                        sh "oc create -f yaml/route.yaml"
                     } catch (Exception e) {
                         sh "echo ${e}"
                     }
