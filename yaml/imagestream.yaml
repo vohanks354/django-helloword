@@ -1,0 +1,9 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: nginx-lb
+  labels:
+    app: nginx-lb
+spec:
+  lookupPolicy:
+    local: false

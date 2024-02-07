@@ -1,0 +1,31 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: nginx-lb
+  name: nginx-lb
+spec:
+    runPolicy: "Serial"
+    triggers:
+    - type: "GitHub"
+      github:
+        secret: rahasia
+    - type: "Generic"
+      generic:
+        secret: rahasia
+    - type: "ConfigChange"
+    - imageChangeParams:
+        automatic: true
+    source:
+      git:
+        uri: https://github.com/vohanks354/nginx-LB.git
+    strategy:
+      type: Docker
+      dockerStrategy:
+        dockerfilePath: Dockerfile
+    output:
+      pullSecret:
+        - name: credquay
+      to:
+        kind: "ImageStreamTag"
+        name: "nginx-lb:latest"
